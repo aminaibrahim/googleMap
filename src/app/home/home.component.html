@@ -1,0 +1,23 @@
+<table>
+        <tr>
+          <th>Restaurants name</th>
+          <th>Lat.</th>
+          <th>Log.</th>
+          <th>Address</th>
+        </tr> 
+      
+        <ng-container *ngFor="let each of resturants">
+          <tr>
+            <td>
+                <a [routerLink]="['/location']" [queryParams]="{lat: each.lat, long: each.long}">
+                  {{each.name}}
+                </a>
+            </td>
+            <td>{{each.lat}}</td>
+            <td>{{each.long}}</td>
+            <td>{{each.address}}</td>
+      
+          </tr>
+        </ng-container>
+      </table>
+      
